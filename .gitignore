@@ -1,0 +1,7 @@
+/.phpunit.cache
+/composer.lock
+/phpunit.xml
+/vendor/
+*.swp
+*.swo
+playground/*
