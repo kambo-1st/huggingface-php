@@ -63,7 +63,9 @@ final class HttpTransporter implements TransporterContract
         }
 
         if (isset($response['error'])) {
-            throw new ErrorException($response['error']);
+            throw new ErrorException([
+                'message' => $response['error']
+            ]);
         }
 
         return $response;
@@ -89,7 +91,9 @@ final class HttpTransporter implements TransporterContract
             $response = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
 
             if (isset($response['error'])) {
-                throw new ErrorException($response['error']);
+                throw new ErrorException([
+                    'message' => $response['error']
+                ]);    
             }
         } catch (JsonException) {
             // ..

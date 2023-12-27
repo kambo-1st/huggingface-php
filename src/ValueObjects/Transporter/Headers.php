@@ -36,7 +36,7 @@ final class Headers
     public static function withAuthorization(ApiKey $apiKey): self
     {
         return new self([
-            'Authorization' => "Bearer {$apiKey->toString()}",
+            'Bearer' => $apiKey->toString(),
         ]);
     }
 
